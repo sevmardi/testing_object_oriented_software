@@ -6,32 +6,32 @@ public class Census {
 
 	public int voting(Vector<Voter> voters) throws Exception {
 
-		int notNullVotes = 0;
+		int trueVotes = 0;
 		int nullVotes = 0;
-		int results = 0;
+		int falseVoters = 0;
 
 		if (voters != null) {
 			for (Voter v : voters) {
 				if (v != null) {
 					if (v.vote() == false) {
-						results += 1;
+						falseVoters += 1;
 					}
-					notNullVotes += 1;
+					trueVotes += 1;
 				} else {
 					nullVotes += 1;
 				}
 			}
 
 		} else {
-			return 0;
+			return -1;
 		}
 
-		if (notNullVotes + nullVotes > voters.size()) {
+		if (trueVotes + nullVotes > voters.size()) {
 			throw new Exception("Valid voters has voted more than once");
-		} else if (notNullVotes + nullVotes < voters.size()) {
+		} else if (trueVotes + nullVotes < voters.size()) {
 			throw new Exception("Valid voters has not voted ");
 		} else {
-			return results;
+			return falseVoters;
 		}
 	}
 
