@@ -5,8 +5,6 @@ package testing_object_oriented_software;
  */
 public class Main {
 	public static void main(String[] args) throws Exception {
-		//TestCensus.allVotersTrueTest();
-		//TestCensus.someVotersFalseTest();
-		TestCensus.allVotersFalseTest();
+		CensusSuite.runAllTests();
 	}
 }

@@ -36,4 +36,15 @@ public class StubMaker {
         }
         return v;
     }
+
+    public static Vector<Voter> someVotersNull(){
+        Vector<Voter> v = new Vector<>();
+        for (int i = 0; i<5; i++) {
+            v.add(new TrueVoter());
+            v.add(new FalseVoter());
+            v.add(null);
+        }
+
+        return v;
+    }
 }
