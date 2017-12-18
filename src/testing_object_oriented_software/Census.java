@@ -16,15 +16,17 @@ public class Census {
 					if (v.vote() == false) {
 						falseVoters += 1;
 					}
+					else {						
 					trueVotes += 1;
+					}
 				} else {
 					nullVotes += 1;
 				}
 			}
-
 		} else {
 			return -1;
-		}
+		} 
+		if(falseVoters == 0 && trueVotes >= 1) return -1;
 
 		if (trueVotes + nullVotes > voters.size()) {
 			throw new Exception("Valid voters has voted more than once");
