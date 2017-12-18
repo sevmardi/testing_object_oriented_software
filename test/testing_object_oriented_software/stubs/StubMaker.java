@@ -57,4 +57,13 @@ public class StubMaker {
         return v;
     }
 
+    public static Vector<Voter>voteDetectorVector(){
+        Vector<Voter> v = new Vector<>();
+        for (int i = 0; i<5; i++) {
+            v.add(new VoteDetector());
+            v.add(null);
+        }
+        return v;
+    }
+
 }

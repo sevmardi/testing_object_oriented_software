@@ -1,5 +1,6 @@
 package testing_object_oriented_software;
 import testing_object_oriented_software.stubs.StubMaker;
+import testing_object_oriented_software.stubs.VoteDetector;
 import testing_object_oriented_software.util.AssertEquals;
 import testing_object_oriented_software.util.NotEqualExeption;
 
@@ -61,6 +62,35 @@ public class TestCensus {
             AssertEquals.integers(-1,c.voting(StubMaker.allTrueSomeNull()));
         }catch (NotEqualExeption e){
             System.out.println("Failed Test:  allTrueSomeVotersNullTest:");
+            System.out.println("\t" + e.getMessage());
+            return false;
+        }
+        return true;
+
+    }
+
+    public static boolean numberOfVotesEqualsNumberOfVotersTest() throws Exception{
+        Census c = new Census();
+        try{
+            c.voting(StubMaker.voteDetectorVector());
+            AssertEquals.integers(5, VoteDetector.getNumberOfVotes());
+        }catch (NotEqualExeption e){
+            System.out.println("Failed Test:  numberOfVotesEqualsNumberOfVotersTest:");
+            System.out.println("\t" + e.getMessage());
+            return false;
+        }
+        return true;
+
+    }
+
+    public static boolean hasEveryOneVotedExactlyOnceTest() throws Exception{
+        Census c = new Census();
+        try{
+            c.voting(StubMaker.voteDetectorVector());
+            AssertEquals.integers(5, VoteDetector.getNumberOfVotes());
+            AssertEquals.booleans(false, VoteDetector.hasOneVoterHasVotedMoreThanOnce());
+        }catch (NotEqualExeption e){
+            System.out.println("Failed Test:  hasEveryOneVotedExactlyOnceTest:");
             System.out.println("\t" + e.getMessage());
             return false;
         }
