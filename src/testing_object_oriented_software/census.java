@@ -14,7 +14,7 @@ public class census {
 			for (Voter v : voters) {
 				if (v != null) {
 					if (v.vote() == false) {
-						results = 0;
+						results += 1;
 					}
 					notNullVotes += 1;
 				} else {
