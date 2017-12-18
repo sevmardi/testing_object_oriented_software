@@ -5,7 +5,7 @@ import testing_object_oriented_software.util.AssertEquals;
 
 public class TestCensus {
 
-    
+
 
     public static void allVotersTrueTest() throws Exception{
         Census c = new Census();
