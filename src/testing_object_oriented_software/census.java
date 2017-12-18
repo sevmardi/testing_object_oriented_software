@@ -2,7 +2,7 @@ package testing_object_oriented_software;
 
 import java.util.Vector;
 
-public class census {
+public class Census {
 
 	public int voting(Vector<Voter> voters) throws Exception {
 
