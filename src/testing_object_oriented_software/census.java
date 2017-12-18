@@ -6,7 +6,7 @@ public class census {
 
 	public int voting(Vector<Voter> voters) {
 	
-	
+	return 0;
 	}
 	
 }
