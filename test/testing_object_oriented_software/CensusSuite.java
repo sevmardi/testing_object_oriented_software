@@ -6,9 +6,15 @@ package testing_object_oriented_software;
 public class CensusSuite {
 
     public static void runAllTests() throws Exception {
+        //Case 1
         TestCensus.allVotersFalseTest();
+        //Case 2
         TestCensus.allVotersTrueTest();
+        //Case 1
         TestCensus.someVotersFalseTest();
-        TestCensus.didAllVotersVote();
+        //Case 1
+        TestCensus.someVotersNullTest();
+        //Case 3
+        TestCensus.allTrueSomeVotersNullTest();
     }
 }

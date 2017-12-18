@@ -33,7 +33,7 @@ public class TestCensus {
     public static boolean allVotersFalseTest() throws Exception{
         Census c = new Census();
         try{
-            AssertEquals.integers(-1,c.voting(StubMaker.allVotersFalse()));
+            AssertEquals.integers(10,c.voting(StubMaker.allVotersFalse()));
         }catch (NotEqualExeption e){
             System.out.println("Failed Test: allVotersFalseTest:");
             System.out.println("\t" + e.getMessage());
@@ -42,12 +42,25 @@ public class TestCensus {
         return true;
     }
 
-    public static boolean didAllVotersVote() throws Exception{
+    public static boolean someVotersNullTest() throws Exception{
         Census c = new Census();
         try{
-            AssertEquals.integers(-1,c.voting(StubMaker.someVotersNull()));
+            AssertEquals.integers(5,c.voting(StubMaker.someVotersNull()));
         }catch (NotEqualExeption e){
-            System.out.println("Failed Test: allVotersFalseTest:");
+            System.out.println("Failed Test: someVotersNullTest:");
+            System.out.println("\t" + e.getMessage());
+            return false;
+        }
+        return true;
+
+    }
+
+    public static boolean allTrueSomeVotersNullTest() throws Exception{
+        Census c = new Census();
+        try{
+            AssertEquals.integers(-1,c.voting(StubMaker.allTrueSomeNull()));
+        }catch (NotEqualExeption e){
+            System.out.println("Failed Test:  allTrueSomeVotersNullTest:");
             System.out.println("\t" + e.getMessage());
             return false;
         }

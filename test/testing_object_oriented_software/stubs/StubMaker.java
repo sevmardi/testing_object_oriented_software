@@ -37,6 +37,7 @@ public class StubMaker {
         return v;
     }
 
+    //some voters are null values
     public static Vector<Voter> someVotersNull(){
         Vector<Voter> v = new Vector<>();
         for (int i = 0; i<5; i++) {
@@ -44,7 +45,16 @@ public class StubMaker {
             v.add(new FalseVoter());
             v.add(null);
         }
-
         return v;
     }
+
+    public static Vector<Voter> allTrueSomeNull(){
+        Vector<Voter> v = new Vector<>();
+        for (int i = 0; i<5; i++) {
+            v.add(new TrueVoter());
+            v.add(null);
+        }
+        return v;
+    }
+
 }
