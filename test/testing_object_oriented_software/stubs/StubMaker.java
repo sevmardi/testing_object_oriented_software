@@ -22,7 +22,7 @@ public class StubMaker {
     //returns all voters voting false
     public static Vector<Voter> allVotersFalse(){
         Vector<Voter> v = new Vector<>();
-        for (int i = 0; i<10; i++){
+        for (int i = 0; i<10; i++) {
             v.add(new FalseVoter());
         }
         return v;
