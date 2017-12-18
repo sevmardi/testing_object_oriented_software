@@ -15,7 +15,7 @@ public class CensusSuite {
         ArrayList<Boolean> testResults = new ArrayList<Boolean>();
 
         //Case 1: All voters voted false
-        testResults.add(testResults.add(TestCensus.allVotersFalseTest()));
+        testResults.add(TestCensus.allVotersFalseTest());
         //Case 2: All voters voted true
         testResults.add(TestCensus.allVotersTrueTest());
         //Case 1 Some voters Voted False, some Voted True
@@ -28,5 +28,20 @@ public class CensusSuite {
         testResults.add(TestCensus.hasEveryOneVotedExactlyOnceTest());
         //Case 4 but slightly obsolete
         testResults.add(TestCensus.numberOfVotesEqualsNumberOfVotersTest());
+
+        int successfulTests = 0;
+        int failedTests =0;
+        for (boolean b:testResults
+             ) {
+            if(b){
+                successfulTests++;
+            }else{
+                failedTests++;
+            }
+        }
+        int alltests = successfulTests+failedTests;
+        System.out.println("==================================");
+        System.out.println(successfulTests + " out of "+ Integer.toString(alltests) + " tests were successful.");
+        System.out.println("==================================");
     }
 }

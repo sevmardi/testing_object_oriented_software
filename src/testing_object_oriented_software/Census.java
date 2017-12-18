@@ -26,11 +26,11 @@ public class Census {
 		} else {
 			return -1;
 		} 
-		if(falseVoters == 0 && trueVotes >= 1) return -1;
+		if(falseVoters == 0 && trueVotes >= 1 && nullVotes>0 ){ return -1;}
 
-		if (trueVotes + nullVotes > voters.size()) {
+		if (trueVotes + nullVotes+falseVoters > voters.size()) {
 			throw new Exception("Valid voters has voted more than once");
-		} else if (trueVotes + nullVotes < voters.size()) {
+		} else if (trueVotes + nullVotes + falseVoters < voters.size()) {
 			throw new Exception("Valid voters has not voted ");
 		}else{
 			return falseVoters;
