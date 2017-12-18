@@ -74,7 +74,9 @@ public class TestCensus {
         try{
             c.voting(StubMaker.voteDetectorVector());
             AssertEquals.integers(5, VoteDetector.getNumberOfVotes());
+            VoteDetector.setNumberOfVotesToZero();
         }catch (NotEqualExeption e){
+            VoteDetector.setNumberOfVotesToZero();
             System.out.println("Failed Test:  numberOfVotesEqualsNumberOfVotersTest:");
             System.out.println("\t" + e.getMessage());
             return false;
@@ -89,7 +91,9 @@ public class TestCensus {
             c.voting(StubMaker.voteDetectorVector());
             AssertEquals.integers(5, VoteDetector.getNumberOfVotes());
             AssertEquals.booleans(false, VoteDetector.hasOneVoterHasVotedMoreThanOnce());
+            VoteDetector.setNumberOfVotesToZero();
         }catch (NotEqualExeption e){
+            VoteDetector.setNumberOfVotesToZero();
             System.out.println("Failed Test:  hasEveryOneVotedExactlyOnceTest:");
             System.out.println("\t" + e.getMessage());
             return false;

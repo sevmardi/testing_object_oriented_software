@@ -1,24 +1,32 @@
 package testing_object_oriented_software;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.BooleanSupplier;
+
 /**
  * Created by Felix on 18.12.2017.
  */
 public class CensusSuite {
 
+
     public static void runAllTests() throws Exception {
+
+        ArrayList<Boolean> testResults = new ArrayList<Boolean>();
+
         //Case 1: All voters voted false
-        TestCensus.allVotersFalseTest();
+        testResults.add(testResults.add(TestCensus.allVotersFalseTest()));
         //Case 2: All voters voted true
-        TestCensus.allVotersTrueTest();
+        testResults.add(TestCensus.allVotersTrueTest());
         //Case 1 Some voters Voted False, some Voted True
-        TestCensus.someVotersFalseTest();
+        testResults.add(TestCensus.someVotersFalseTest());
         //Case 1 Some voters Voted False, some Voted True, Some Voters ARE null
-        TestCensus.someVotersNullTest();
+        testResults.add(TestCensus.someVotersNullTest());
         //Case 3 Some voters voted True, some voters ARE null
-        TestCensus.allTrueSomeVotersNullTest();
+        testResults.add(TestCensus.allTrueSomeVotersNullTest());
         //Case 4 + 5
-        TestCensus.hasEveryOneVotedExactlyOnceTest();
+        testResults.add(TestCensus.hasEveryOneVotedExactlyOnceTest());
         //Case 4 but slightly obsolete
-        TestCensus.numberOfVotesEqualsNumberOfVotersTest();
+        testResults.add(TestCensus.numberOfVotesEqualsNumberOfVotersTest());
     }
 }

@@ -26,4 +26,8 @@ public class VoteDetector implements Voter {
         return oneVoterHasVotedMoreThanOnce;
     }
 
+    public static void setNumberOfVotesToZero(){
+        numberOfVotes = 0;
+    }
+
 }
