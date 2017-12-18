@@ -30,5 +30,19 @@ public class TestCensus {
         return true;
     }
 
+    public static boolean allVotersFalseTest() throws Exception{
+        Census c = new Census();
+        try{
+            AssertEquals.integers(-1,c.voting(StubMaker.allVotersFalse()));
+        }catch (NotEqualExeption e){
+            System.out.println("Failed Test: allVotersFalseTest:");
+            System.out.println("\t" + e.getMessage());
+            return false;
+        }
+        return true;
+    }
+
+
+
 
 }

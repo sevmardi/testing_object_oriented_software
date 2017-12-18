@@ -30,7 +30,9 @@ public class Census {
 			throw new Exception("Valid voters has voted more than once");
 		} else if (trueVotes + nullVotes < voters.size()) {
 			throw new Exception("Valid voters has not voted ");
-		} else {
+		} else if(voters.size() == falseVoters) {
+			return -1;
+		}else{
 			return falseVoters;
 		}
 	}

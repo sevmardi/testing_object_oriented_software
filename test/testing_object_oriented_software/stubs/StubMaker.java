@@ -11,7 +11,6 @@ public class StubMaker {
 
     //returns all voters voting true
     public static Vector<Voter> allVotersTrue(){
-
         Vector<Voter> v = new Vector<>();
         for (int i = 0; i<10; i++){
             v.add(new TrueVoter());
